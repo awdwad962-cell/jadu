@@ -96,12 +96,18 @@ footer {background-color:#c0392b; color:white; text-align:center; padding:50px 2
     .card-container, .fun-facts {flex-direction:column; align-items:center;}
 }
 
-/* Mobil (<600px) hero mindre */
+/* Mobil (<600px) hero/header mindre */
 @media(max-width:600px){
+    header {padding:10px 15px;}
+    header h1 {font-size:1.5em; margin-bottom:10px;}
+    nav ul {flex-direction:column; margin-top:5px;}
+    nav ul li {margin:5px 0;}
+
     #hero {padding:40px 15px 40px; min-height:auto;}
-    #hero h2 {font-size:1.6em;}
-    #hero p {font-size:1em;}
-    #hero .btn {padding:10px 20px; font-size:0.9em;}
+    #hero h2 {font-size:1.5em;}
+    #hero p {font-size:1em; margin-bottom:20px;}
+    #hero .btn {padding:8px 15px; font-size:0.9em;}
+
     .section {padding:40px 15px;}
     .section h2 {font-size:1.8em;}
     .section p {font-size:1em;}
