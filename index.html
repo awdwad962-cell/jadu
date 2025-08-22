@@ -16,22 +16,52 @@ h1,h2,h3,h4,h5,h6 {margin-bottom:15px;}
 .heart:nth-child(2), .heart:nth-child(5) {font-size:1.3em; opacity:0.6;}
 @keyframes floatUp {0% {transform: translateY(0) scale(1); opacity:0.5;} 50% {opacity:0.7;} 100% {transform: translateY(-1200px) scale(1.2); opacity:0;}}
 
-/* Header */
-header {display:flex; justify-content:space-between; align-items:center; background-color:#c0392b; color:white; padding:20px 40px; position:fixed; top:0; width:100%; z-index:10; box-shadow:0 4px 12px rgba(0,0,0,0.3);}
-header h1 {font-size:2em;}
-nav ul {list-style:none; display:flex;}
-nav ul li {margin-left:20px;}
+/* Header - uppdaterad */
+header {
+  position: sticky;
+  top: 0;
+  background-color: #c0392b;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  z-index: 10;
+  box-shadow:0 4px 12px rgba(0,0,0,0.3);
+}
+
+header h1 {
+  font-size: 1.5em; /* mindre textstorlek */
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  margin-left: 15px; /* mindre mellanrum */
+}
+
 nav ul li a {color:white; font-weight:bold; transition:0.3s;}
 nav ul li a:hover {color:#f8c8c8; transform:scale(1.1);}
 
 /* Hero */
-#hero {text-align:center; padding:120px 20px 80px; background:linear-gradient(to right, #e37b7b, #f3a8a8); color:white; border-bottom-left-radius:50px; border-bottom-right-radius:50px; position:relative; overflow:hidden; min-height:auto;}
-#hero h2 {font-size:3.2em; margin-bottom:20px; animation:fadeInDown 1.5s ease-out;}
-#hero p {font-size:1.5em; margin-bottom:30px; animation:fadeInUp 1.5s ease-out 0.5s;}
-#hero .btn {background-color:white; color:#e74c3c; padding:15px 35px; border-radius:50px; font-weight:bold; transition:0.3s;}
+#hero {
+  text-align: center;
+  padding: 40px 15px;
+  background: linear-gradient(to right, #e37b7b, #f3a8a8);
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  max-height: auto;
+  color:white;
+}
+
+#hero h2 { font-size: 1.8em; margin-bottom: 15px; }
+#hero p { font-size: 1em; margin-bottom: 20px; }
+#hero .btn { padding: 8px 15px; font-size: 0.9em; background-color:white; color:#e74c3c; border-radius:50px; font-weight:bold; transition:0.3s;}
 #hero .btn:hover {background-color:#f8dede; transform:scale(1.05);}
-@keyframes fadeInDown {0% {opacity:0; transform:translateY(-50px);} 100% {opacity:1; transform:translateY(0);}}
-@keyframes fadeInUp {0% {opacity:0; transform:translateY(50px);} 100% {opacity:1; transform:translateY(0);}}
 
 /* Sektioner */
 .section {padding:80px 20px; max-width:1300px; margin:0 auto; text-align:center;}
