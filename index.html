@@ -16,7 +16,7 @@ h1,h2,h3,h4,h5,h6 {margin-bottom:15px;}
 .heart:nth-child(2), .heart:nth-child(5) {font-size:1.3em; opacity:0.6;}
 @keyframes floatUp {0% {transform: translateY(0) scale(1); opacity:0.5;} 50% {opacity:0.7;} 100% {transform: translateY(-1200px) scale(1.2); opacity:0;}}
 
-/* Header - uppdaterad */
+/* Header */
 header {
   position: sticky;
   top: 0;
@@ -31,37 +31,54 @@ header {
 }
 
 header h1 {
-  font-size: 1.5em; /* mindre textstorlek */
+  font-size: 1.5em;
 }
 
+/* Meny */
 nav ul {
   display: flex;
   list-style: none;
   flex-wrap: wrap;
 }
+nav ul li { margin-left: 15px; }
+nav ul li a { color:white; font-weight:bold; transition:0.3s; }
+nav ul li a:hover { color:#f8c8c8; transform:scale(1.1); }
 
-nav ul li {
-  margin-left: 15px; /* mindre mellanrum */
+/* Hamburger ikon */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-left: 10px;
 }
-
-nav ul li a {color:white; font-weight:bold; transition:0.3s;}
-nav ul li a:hover {color:#f8c8c8; transform:scale(1.1);}
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+  transition: 0.4s;
+}
 
 /* Hero */
 #hero {
   text-align: center;
-  padding: 40px 15px;
-  background: linear-gradient(to right, #e37b7b, #f3a8a8);
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
-  max-height: auto;
+  padding: 120px 20px 80px;
+  background:linear-gradient(to right, #e37b7b, #f3a8a8);
   color:white;
+  border-bottom-left-radius:50px;
+  border-bottom-right-radius:50px;
+  position:relative;
+  overflow:hidden;
+  min-height:auto;
 }
 
-#hero h2 { font-size: 1.8em; margin-bottom: 15px; }
-#hero p { font-size: 1em; margin-bottom: 20px; }
-#hero .btn { padding: 8px 15px; font-size: 0.9em; background-color:white; color:#e74c3c; border-radius:50px; font-weight:bold; transition:0.3s;}
-#hero .btn:hover {background-color:#f8dede; transform:scale(1.05);}
+#hero h2 { font-size:3.2em; margin-bottom:20px; animation:fadeInDown 1.5s ease-out; }
+#hero p { font-size:1.5em; margin-bottom:30px; animation:fadeInUp 1.5s ease-out 0.5s; }
+#hero .btn { background-color:white; color:#e74c3c; padding:15px 35px; border-radius:50px; font-weight:bold; transition:0.3s; }
+#hero .btn:hover { background-color:#f8dede; transform:scale(1.05); }
+
+@keyframes fadeInDown {0% {opacity:0; transform:translateY(-50px);} 100% {opacity:1; transform:translateY(0);}}
+@keyframes fadeInUp {0% {opacity:0; transform:translateY(50px);} 100% {opacity:1; transform:translateY(0);}}
 
 /* Sektioner */
 .section {padding:80px 20px; max-width:1300px; margin:0 auto; text-align:center;}
@@ -118,32 +135,28 @@ footer {background-color:#c0392b; color:white; text-align:center; padding:50px 2
 
 /* Responsivitet */
 @media(max-width:900px){
-    .timeline-item {width:100%; left:0 !important; padding-left:60px; padding-right:20px; text-align:left !important;}
-    header {flex-direction:column;}
-    nav ul {flex-direction:column; margin-top:10px;}
-    nav ul li {margin:10px 0;}
-    .image-gallery img {width:80%; height:auto;}
-    .card-container, .fun-facts {flex-direction:column; align-items:center;}
+  .timeline-item {width:100%; left:0 !important; padding-left:60px; padding-right:20px; text-align:left !important;}
+  nav ul { display: none; flex-direction: column; width: 100%; background-color: #c0392b; position: absolute; top:60px; left:0; }
+  nav ul li { margin: 10px 0; text-align:center; }
+  .hamburger { display:flex; }
+  .image-gallery img {width:80%; height:auto;}
+  .card-container, .fun-facts {flex-direction:column; align-items:center;}
 }
 
 /* Mobil (<600px) hero/header mindre */
 @media(max-width:600px){
-    header {padding:10px 15px;}
-    header h1 {font-size:1.5em; margin-bottom:10px;}
-    nav ul {flex-direction:column; margin-top:5px;}
-    nav ul li {margin:5px 0;}
-
-    #hero {padding:40px 15px 40px; min-height:auto;}
-    #hero h2 {font-size:1.5em;}
-    #hero p {font-size:1em; margin-bottom:20px;}
-    #hero .btn {padding:8px 15px; font-size:0.9em;}
-
-    .section {padding:40px 15px;}
-    .section h2 {font-size:1.8em;}
-    .section p {font-size:1em;}
-    .card, .fun-fact {width:90%; padding:15px;}
-    .timeline::before {left:20px;}
-    .timeline-item::before {left:-35px; top:20px;}
+  header {padding:10px 15px;}
+  header h1 {font-size:1.5em; margin-bottom:0;}
+  #hero {padding:40px 15px 40px; min-height:auto;}
+  #hero h2 {font-size:1.5em;}
+  #hero p {font-size:1em; margin-bottom:20px;}
+  #hero .btn {padding:8px 15px; font-size:0.9em;}
+  .section {padding:40px 15px;}
+  .section h2 {font-size:1.8em;}
+  .section p {font-size:1em;}
+  .card, .fun-fact {width:90%; padding:15px;}
+  .timeline::before {left:20px;}
+  .timeline-item::before {left:-35px; top:20px;}
 }
 </style>
 </head>
@@ -156,15 +169,20 @@ footer {background-color:#c0392b; color:white; text-align:center; padding:50px 2
 
 <header>
 <h1>Olivia</h1>
+<div class="hamburger" onclick="toggleMenu()">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
 <nav>
-<ul>
-<li><a href="#about">Om Olivia</a></li>
-<li><a href="#cards">Kort</a></li>
-<li><a href="#timeline">Timeline</a></li>
-<li><a href="#gallery">Galleri</a></li>
-<li><a href="#fun">Roliga Fakta</a></li>
-<li><a href="#contact">Kontakt</a></li>
-</ul>
+  <ul>
+    <li><a href="#about">Om Olivia</a></li>
+    <li><a href="#cards">Kort</a></li>
+    <li><a href="#timeline">Timeline</a></li>
+    <li><a href="#gallery">Galleri</a></li>
+    <li><a href="#fun">Roliga Fakta</a></li>
+    <li><a href="#contact">Kontakt</a></li>
+  </ul>
 </nav>
 </header>
 
@@ -255,6 +273,13 @@ checkTimelineScroll();
 // Popup funktioner
 function showPopup(id){document.getElementById(id).classList.add('show');}
 function closePopup(id){document.getElementById(id).classList.remove('show');}
+
+// Hamburger meny-funktion
+function toggleMenu(){
+  const menu = document.querySelector('nav ul');
+  if(menu.style.display === "flex"){ menu.style.display = "none"; }
+  else{ menu.style.display = "flex"; }
+}
 </script>
 
 </body>
